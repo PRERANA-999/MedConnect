@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/buttonTimeSlot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:padding="12dp"
+    android:text="HH:MM AM/PM"
+    android:background="@drawable/rounded_button_bg"
+    android:textColor="@android:color/white"
+    android:textSize="16sp"
+    android:gravity="center"
+    android:elevation="2dp"
+    />

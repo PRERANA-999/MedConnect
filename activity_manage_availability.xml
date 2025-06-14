@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ManageAvailabilityActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/selectedDateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Selected Date: DD-MM-YYYY"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <CheckBox
+                android:id="@+id/checkboxInClinic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="In-clinic" />
+
+            <CheckBox
+                android:id="@+id/checkboxVideoConsultation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Video Consultation" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Select Time Slots:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:background="@drawable/rounded_corner_background">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Morning (09:00 - 14:00)"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textStyle="bold"
+                android:textColor="?android:attr/textColorPrimary"
+                android:gravity="center"
+                android:paddingBottom="8dp"/>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="4"
+                android:rowCount="4"
+                android:alignmentMode="alignMargins"
+                android:columnOrderPreserved="false">
+
+                <Button android:id="@+id/buttonSlot900" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="09:00" style="?android:attr/buttonStyleSmall" android:layout_margin="4dp"/>
+                <Button android:id="@+id/buttonSlot930" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="09:30" style="?android:attr/buttonStyleSmall" android:layout_margin="4dp"/>
+                <Button android:id="@+id/buttonSlot1000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="10:00" style="?android:attr/buttonStyleSmall" android:layout_margin="4dp"/>
+                <Button android:id="@+id/buttonSlot1030" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="10:30" style="?android:attr/buttonStyleSmall" android:layout_margin="4dp"/>
+                <Button android:id="@+id/buttonSlot1100" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="11:00" style="?android:attr/buttonStyleSmall" android:layout_margin="4dp"/>
+                <Button android:id="@+id/buttonSlot1130" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="11:30" style="?android:attr/buttonStyleSmall" android:layout_margin="4dp"/>
+                <Button android:id="@+id/buttonSlot1200" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="12:00" style="?android:attr/buttonStyleSmall" android:layout_margin="4dp"/>
+                <Button android:id="@+id/buttonSlot1230" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="12:30" style="?android:attr/buttonStyleSmall" android:layout_margin="4dp"/>
+                <Button android:id="@+id/buttonSlot1300" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="13:00" style="?android:attr/buttonStyleSmall" android:layout_margin="4dp"/>
+                <Button android:id="@+id/buttonSlot1330" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="13:30" style="?android:attr/buttonStyleSmall" android:layout_margin="4dp"/>
+            </GridLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            android:background="@drawable/rounded_corner_background">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Afternoon (14:00 - 18:00)"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textStyle="bold"
+                android:textColor="?android:attr/textColorPrimary"
+                android:gravity="center"
+                android:paddingBottom="8dp"/>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="4"
+                android:rowCount="4"
+                android:alignmentMode="alignMargins"
+                android:columnOrderPreserved="false">
+                <Button android:id="@+id/buttonSlot1400" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="14:00" style="?android:attr/buttonStyleSmall" android:layout_margin="4dp"/>
+                <Button android:id="@+id/buttonSlot1430" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="14:30" style="?android:attr/buttonStyleSmall" android:layout_margin="4dp"/>
+                <Button android:id="@+id/buttonSlot1500" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="15:00" style="?android:attr/buttonStyleSmall" android:layout_margin="4dp"/>
+                <Button android:id="@+id/buttonSlot1530" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="15:30" style="?android:attr/buttonStyleSmall" android:layout_margin="4dp"/>
+                <Button android:id="@+id/buttonSlot1600" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="16:00" style="?android:attr/buttonStyleSmall" android:layout_margin="4dp"/>
+                <Button android:id="@+id/buttonSlot1630" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="16:30" style="?android:attr/buttonStyleSmall" android:layout_margin="4dp"/>
+                <Button android:id="@+id/buttonSlot1700" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="17:00" style="?android:attr/buttonStyleSmall" android:layout_margin="4dp"/>
+                <Button android:id="@+id/buttonSlot1730" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="17:30" style="?android:attr/buttonStyleSmall" android:layout_margin="4dp"/>
+            </GridLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            android:background="@drawable/rounded_corner_background">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Evening (18:00 - 21:00)"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textStyle="bold"
+                android:textColor="?android:attr/textColorPrimary"
+                android:gravity="center"
+                android:paddingBottom="8dp"/>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="4"
+                android:rowCount="4"
+                android:alignmentMode="alignMargins"
+                android:columnOrderPreserved="false">
+                <Button android:id="@+id/buttonSlot1800" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="18:00" style="?android:attr/buttonStyleSmall" android:layout_margin="4dp"/>
+                <Button android:id="@+id/buttonSlot1830" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="18:30" style="?android:attr/buttonStyleSmall" android:layout_margin="4dp"/>
+                <Button android:id="@+id/buttonSlot1900" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="19:00" style="?android:attr/buttonStyleSmall" android:layout_margin="4dp"/>
+                <Button android:id="@+id/buttonSlot1930" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="19:30" style="?android:attr/buttonStyleSmall" android:layout_margin="4dp"/>
+                <Button android:id="@+id/buttonSlot2000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="20:00" style="?android:attr/buttonStyleSmall" android:layout_margin="4dp"/>
+                <Button android:id="@+id/buttonSlot2030" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="20:30" style="?android:attr/buttonStyleSmall" android:layout_margin="4dp"/>
+            </GridLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Added Time Slots:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <ProgressBar
+            android:id="@+id/progressBarAvailability"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewTimeSlots"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:nestedScrollingEnabled="false" />
+
+        <Button
+            android:id="@+id/buttonSaveAvailability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Save All Slots" />
+
+    </LinearLayout>
+</ScrollView>
