@@ -1,0 +1,31 @@
+// settings.gradle
+
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal() // Keep this for Gradle plugins
+    }
+}
+dependencyResolutionManagement {
+    // This line tells Gradle to exclusively use repositories defined here,
+    // and fail if it finds them in project-level build.gradle files.
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        // Add the official Jitsi Maven Repository here
+        maven {
+            url "https://github.com/jitsi/jitsi-maven-repository/raw/master/releases"
+        }
+        // If you were using JitPack for other dependencies, keep it.
+        // If only for Jitsi, and Jitsi is now from its own Maven, you might remove JitPack.
+        // For safety, let's keep it for now.
+        maven { url 'https://www.jitpack.io' }
+        // The documentation also mentions maven.google.com explicitly, often covered by google()
+        // maven { url "https://maven.google.com" } // Often redundant with google()
+    }
+}
+
+rootProject.name = "MedConnect"
+include ':app'
