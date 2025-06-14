@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ContactUsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_contact_us" android:contentDescription="Contact Icon"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get in Touch"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="We're here to help! Please feel free to reach out to us through any of the following methods:"
+            android:textSize="16sp"
+            android:textColor="@color/text_primary"
+            android:lineSpacingExtra="4dp"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="24dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonEmailUs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email Us"
+            android:textColor="@color/white"
+            app:cornerRadius="8dp"
+            android:paddingVertical="12dp"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginBottom="12dp"
+            app:icon="@drawable/ic_email" app:iconTint="@color/white"
+            android:backgroundTint="@color/colorPrimary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonCallUs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Call Us"
+            android:textColor="@color/white"
+            app:cornerRadius="8dp"
+            android:paddingVertical="12dp"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginBottom="12dp"
+            app:icon="@drawable/ic_phone" app:iconTint="@color/white"
+            android:backgroundTint="@color/colorPrimary" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MedConnect, Jayanagar 9th Block\nBengaluru, Karnataka\nIndia"
+            android:textSize="16sp"
+            android:textColor="@color/text_secondary"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="4dp"/>
+
+    </LinearLayout>
+</ScrollView>
