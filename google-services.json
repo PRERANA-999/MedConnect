@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "363226249712",
+    "firebase_url": "https://medconnect-babbf-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "medconnect-babbf",
+    "storage_bucket": "medconnect-babbf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:363226249712:android:2a764610f9fb7789ea8535",
+        "android_client_info": {
+          "package_name": "com.example.medconnect"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkSMtKsV2xpPWHF19DvEZHonVmdGGKRxM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

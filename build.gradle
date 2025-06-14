@@ -1,35 +1,100 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+// build.gradle (Module: app)
 
-buildscript {
-    repositories {
-        google() // Google's Maven repository
-        mavenCentral() // Maven Central repository
-        // If your buildscript (Gradle plugins) itself needs anything from Jitsi Maven, add it here.
-        // Otherwise, this can remain clean. No need for JitPack or Jitsi Maven here for now.
-    }
-    dependencies {
-        // The Android Gradle plugin (AGP) version.
-        classpath 'com.android.tools.build:gradle:8.1.4' // Use your current AGP version
-        // The Google Services plugin for Firebase.
-        classpath 'com.google.gms:google-services:4.4.2' // Check this version!
-    }
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services' // Apply the Google Services plugin here
 }
 
-// THIS BLOCK SHOULD BE REMOVED or COMMENTED OUT.
-// Repositories for dependencies are now managed in settings.gradle.
-/*
-allprojects {
-    repositories {
-        maven {
-            url "https://github.com/jitsi/jitsi-maven-repository/raw/master/releases"
+android {
+    namespace 'com.example.medconnect'
+    compileSdk 34
+
+    packagingOptions {
+        resources {
+            pickFirst 'META-INF/NOTICE.md'
+            pickFirst 'META-INF/LICENSE.md'
+            pickFirst 'META-INF/LICENSE'
+            pickFirst 'META-INF/notice.md'
+            pickFirst 'META-INF/license.md'
+            pickFirst 'META-INF/notice'
+            pickFirst 'META-INF/license'
         }
-        google()
-        mavenCentral()
-        maven { url 'https://www.jitpack.io' }
+    }
+
+    defaultConfig {
+        applicationId 'com.example.medconnect'
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
-*/
 
-tasks.register('clean', Delete) {
-    delete rootProject.buildDir
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    // *** REMOVED: Client-side email sending libraries for security/reliability reasons ***
+    // These are generally not used for direct email sending from Android apps.
+    // Consider using Firebase Cloud Functions or a dedicated backend service for email.
+    // implementation 'com.sun.mail:android-mail:1.6.7'
+    // implementation 'com.sun.mail:android-activation:1.6.7'
+
+    // Firebase BOM (Bill of Materials) - USE THE LATEST STABLE VERSION
+    // Current version 32.8.0 is recent. Keep this updated for all Firebase products.
+    implementation platform('com.google.firebase:firebase-bom:32.8.0')
+
+    // Firebase Authentication
+    implementation 'com.google.firebase:firebase-auth'
+
+    // Firebase Realtime Database (If you choose to use this)
+    implementation 'com.google.firebase:firebase-database'
+
+    // Firebase Firestore Database
+    implementation 'com.google.firebase:firebase-firestore'
+
+    // NEW: Firebase Storage (for profile pictures and prescription attachments)
+    implementation 'com.google.firebase:firebase-storage'
+
+    // Jitsi Meet SDK - Pinned to a specific stable version (e.g., 8.1.0 as a common recent version)
+    // Always check Jitsi's official GitHub/Maven for the absolute latest stable release.
+    implementation ('org.jitsi.react:jitsi-meet-sdk:8.1.0') { transitive = true }
+
+    // NEW: Glide - Image loading library (for profile pictures)
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
+
+    // NEW: CircleImageView - For circular profile picture display
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    // Android Lifecycle and Activity KTX
+    implementation 'androidx.activity:activity:1.8.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.1'
+
+    // Testing libraries
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    // Razorpay SDK
+    implementation 'com.razorpay:checkout:1.6.35' // Current version is fine
+
+    implementation 'com.sun.mail:android-mail:1.6.7'
+    implementation 'com.sun.mail:android-activation:1.6.7'
 }
